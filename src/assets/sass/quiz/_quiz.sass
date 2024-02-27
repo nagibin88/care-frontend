@@ -1,0 +1,287 @@
+// quiz
+.quiz
+	padding: 100px
+
+	position: fixed
+	width: 100%
+	height: 100%
+
+	z-index: 10
+
+	background-color: $blackTransparent
+
+	top: 0
+	left: 0
+
+	&-content
+		max-width: 1300px
+		height: 600px
+
+		display: flex
+		justify-content: space-between
+
+		background-color: $white
+
+		padding: 50px
+
+		+borderRadiusBlock
+		+transition
+
+		&-form
+			width: calc( 75% - 25px )
+
+			&-text
+				height: 100%
+				display: flex
+
+				flex-direction: column
+				justify-content: center
+				// justify-content: space-between
+
+				opacity: 1
+
+				+transition
+
+				&.isClose
+					opacity: 0
+
+				&__image
+					width: 50px
+					margin-bottom: 50px
+
+				&__title
+					width: 85%
+					font-size: 28px
+
+					margin-bottom: 35px
+
+					& > span
+						margin-left: 5px
+						color: $mainColor
+						border-bottom: 2px solid $mainColor
+
+				&-description
+					margin-top: 25px
+					width: 85%
+
+					margin-bottom: 35px
+
+					&:first-child
+						margin-bottom: 15px
+
+					&__description
+						font-size: 21px
+
+						& > span
+							color: $black
+							border-bottom: 1px solid $black
+
+				&-checkbox-wrapper
+					margin-bottom: 35px
+
+				&-checkbox
+					margin-bottom: 15px
+
+					&:last-child
+						margin-bottom: 0
+
+				&-prices
+					display: flex
+					justify-content: space-between
+
+					margin-bottom: 35px
+
+					&-block
+						cursor: pointer
+
+						width: calc( 100% / 4 - 7.5px )
+
+						padding: 15px
+
+						background-color: $backgroundGray
+
+						border-radius: 25px
+
+						+transition
+
+						&.active
+							transform: translateY(-15px)
+
+							background-color: $mainColor
+							color: $white
+
+						&.active &__btn
+							color: $black
+							background-color: $white
+
+						&.active:hover &__btn
+							color: $black
+							background-color: $white
+
+						&:hover &__btn
+							color: $white
+							background-color: $mainColor
+
+						&__subtitle
+							font-size: 15px
+							margin-bottom: 10px
+
+						&__title
+							font-size: 24px
+							margin-bottom: 60px
+
+							line-height: 1em
+							letter-spacing: -.4px
+
+							& > span
+								display: block
+								font-size: 15px
+
+						&__btn
+							width: 100%
+
+							padding: 10px 20px
+							font-size: 14px
+							color: $mainColor
+							background-color: $lightMainColor
+							font-weight: 700
+							letter-spacing: -.3px
+							border: none
+							border-radius: 100px
+							cursor: pointer
+
+							+transition
+
+				&-phone
+					margin-top: 50px
+
+					display: flex
+
+					&__input
+						width: 380px
+						height: 77px
+
+						display: inline
+
+						padding: 15px 25px
+
+						font-family: "Inter", sans-serif
+						font-size: 36px
+						font-weight: 500
+						color: $mainColor
+
+						border: 2px solid $lightMainColor
+						outline: none
+
+						border-radius: 100px
+
+						+transition
+
+						&::placeholder
+							user-select: none
+							color: $lightMainColor
+
+						&:focus
+							border: 2px solid $mainColor
+
+						&.complete
+							// background-color: $mainColor
+							border: 2px solid $mainColor
+
+							// color: $white
+
+					&__btn
+						padding: 15px 25px
+
+						display: inline-flex
+						justify-content: center
+						align-items: center
+
+						// width: 77px
+						height: 77px
+
+						font-size: 24px
+
+						color: $white
+
+						cursor: pointer
+
+						margin-left: 15px
+
+						border: none
+						background-color: $mainColor
+
+						border-radius: 100px
+
+						opacity: 0
+
+						+transition
+
+						& > svg
+							margin-left: 15px
+
+						&:hover
+							background-color: $hoverMainColor
+
+						&.active
+							opacity: 1
+
+				&-btn
+					&__back
+						width: 150px
+						margin-right: 15px
+
+					&__btn
+						width: 300px
+
+		&-progress
+			width: calc( 30% - 25px )
+
+			&__subtitle
+				font-size: 16px
+
+			&__title
+				font-size: 32px
+				margin-bottom: 10px
+
+			&-bar
+				position: relative
+
+				overflow: hidden
+
+				width: 100%
+				height: 8px
+
+				border-radius: 100px
+
+				background-color: $backgroundGray
+
+				&-active
+					position: absolute
+
+					top: 0
+					left: 0
+
+					height: 100%
+					border-radius: 100px
+
+					background-color: $mainColor
+
+					z-index: 2
+
+					+transition
+
+				&-subactive
+					position: absolute
+
+					top: 0
+					left: 0
+
+					height: 100%
+					border-radius: 100px
+
+					background-color: $lightMainColor
+
+					z-index: 1
+
+					+transition

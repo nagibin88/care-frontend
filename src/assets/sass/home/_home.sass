@@ -1,0 +1,37 @@
+// home
+.home
+	margin: 75px 0 10000px
+
+	&-main
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+
+		&-text
+			padding: 50px
+
+			width: calc( 60% - 12.5px )
+
+			background-color: $backgroundGray
+
+			+borderRadiusBlock
+
+			&__title
+				font-size: 54px
+				margin-bottom: 25px
+
+				& > span
+					color: $mainColor
+
+			&__description
+				width: 85%
+				font-size: 24px
+
+				margin-bottom: 50px
+
+		&-image
+			width: calc( 40% - 12.5px )
+			height: 700px
+
+			+borderRadiusBlock
+			+backgroundSetting
